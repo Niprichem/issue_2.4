@@ -4,10 +4,10 @@ import os
 def get_files_gener(dir_name, extention):
     return (f_name for f_name in os.listdir(dir_name) if f_name.endswith('.{}'.format(extention)))
 
-def get_appropriate_files(dir, file_list, text):
+def get_appropriate_files(dir_, file_list, text):
     new_file_list = []
     for f in file_list:
-        with open(os.path.join(dir, f), 'r') as fp:
+        with open(os.path.join(dir_, f), 'r') as fp:
             for line in fp:
                 if text in line:
                     new_file_list.append(f)
